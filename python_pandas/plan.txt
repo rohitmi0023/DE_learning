@@ -1,0 +1,15 @@
+Python Learning Strategy for Data Engineering
+
+Week 1: Pandas Mastery + SQL Integration
+    Day 1: Pandas Core: DataFrames, Series
+        https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html
+    Day 2: Data Cleaning & Transformation
+        https://realpython.com/python-data-cleaning-numpy-pandas/
+    Day 3: Merging/Joining Datasets
+        https://realpython.com/pandas-merge-join-and-concat/
+    Day 4: SQL ↔ Pandas Integration
+        https://www.datacamp.com/tutorial/sqlalchemy-tutorial-examples
+    Day 5: DateTime Operations
+        https://pandas.pydata.org/docs/getting_started/intro_tutorials/09_timeseries.html
+        https://pandas.pydata.org/docs/reference/api/pandas.Series.resample.html#pandas.Series.resample
+        https://pandas.pydata.org/docs/getting_started/intro_tutorials/06_calculate_statistics.html#min-tut-06-stats
