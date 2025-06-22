@@ -1,0 +1,5 @@
+--------------------------------------------------------- Week 2: Advanced SQL & Query Optimization ---------------------------------
+--------------------- Day 8 : Query Optimization (EXPLAIN, INDEXING)
+-- https://use-the-index-luke.com/
+-- https://leetcode.com/problems/trips-and-users/
+-- https://platform.stratascratch.com/coding/10315-query-optimization

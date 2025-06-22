@@ -15,7 +15,7 @@ air_quality['datetime'].max()
 air_quality['month'] = air_quality['datetime'].dt.month
 
 # 3. What is the average NO2  concentration for each day of the week for each of the measurement locations?
-# air_quality.groupby([ air_quality['datetime'].dt.weekday, 'location'])['value'].mean()
+air_quality.groupby([ air_quality['datetime'].dt.weekday, 'location'])['value'].mean()
 
 # 4. Plot the typical NO2 pattern during the day of our time series of all stations together. In other words, what is the average value for each hour of the day?
 fig, axs = plt.subplots(figsize=(12,4))
