@@ -1,0 +1,39 @@
+{
+	"nodes":[
+		{"id":"20236c5c13ce2039","type":"text","text":"D4. Window Functions (ROW_NUMBER, RANK, DENSE_RANK)","x":265,"y":-80,"width":505,"height":60,"color":"6"},
+		{"id":"6938f861eb52ffc4","type":"text","text":"D5. Window Functions (LEAD, LAG, FIRST_VALUE)","x":265,"y":-1,"width":415,"height":60},
+		{"id":"2caa9088c19dfc34","type":"text","text":"D6. Date/Time Manipulation (EXTRACT, DATE_TRUNC, DATEDIFF)","x":265,"y":89,"width":535,"height":60,"color":"6"},
+		{"id":"c052891f53fa25e8","type":"text","text":"D7. **Mock Test** (Solve 5 Mixed Difficulty Problems)","x":265,"y":180,"width":420,"height":60,"color":"6"},
+		{"id":"32558081f9be1b5d","type":"text","text":"D3. CTEs (WITH clauses), Nested Queries","x":265,"y":-160,"width":357,"height":60,"color":"6"},
+		{"id":"145db042148bd142","type":"text","text":"D2. Advanced Joins","x":265,"y":-240,"width":250,"height":60,"color":"6"},
+		{"id":"d879e6d42e95cf74","type":"text","text":"D1. Basic SQL Refreshed","x":265,"y":-320,"width":250,"height":60,"color":"6"},
+		{"id":"f005c0cf955fd0a5","type":"text","text":"W1.  SQL Foundations & Intermediate Concepts","x":-300,"y":-1,"width":400,"height":60},
+		{"id":"ef8b71e2ecdbed09","type":"text","text":"SQL Learning","x":-680,"y":150,"width":160,"height":60},
+		{"id":"329abe149ad7627c","x":229,"y":323,"width":456,"height":60,"type":"text","text":"D8. Query Optimization (EXPLAIN, INDEXING)"},
+		{"id":"ab7c29200be3dbb3","x":224,"y":408,"width":461,"height":60,"type":"text","text":"D9. Pivoting Data (CASE WHEN, PIVOT)"},
+		{"id":"bc67ea8ad329d25f","x":223,"y":487,"width":457,"height":60,"type":"text","text":"D10. Recursive CTEs (Hierarchical Data)"},
+		{"id":"a155a9087e465805","x":222,"y":587,"width":458,"height":60,"type":"text","text":"D11.  Stored Procedures & UDFs"},
+		{"id":"8647a02068c76ba1","x":218,"y":688,"width":462,"height":60,"type":"text","text":"D12. Data Quality Checks (NULLs, Duplicates)"},
+		{"id":"11fc42d6f551c68c","x":-300,"y":531,"width":369,"height":56,"type":"text","text":"W2. Advanced SQL & Optimization"},
+		{"id":"b1f5bc371efb769e","x":213,"y":786,"width":467,"height":60,"type":"text","text":"D13. Snowflake-Specific SQL (CLONE, TIME TRAVEL)"},
+		{"id":"c2b8d90067a18173","x":212,"y":889,"width":468,"height":60,"type":"text","text":"D14. Mock Interview (SQL + DE Concepts)"}
+	],
+	"edges":[
+		{"id":"218ab9f68ba01a5a","fromNode":"ef8b71e2ecdbed09","fromSide":"right","toNode":"f005c0cf955fd0a5","toSide":"left"},
+		{"id":"16d87daf6765e08f","fromNode":"f005c0cf955fd0a5","fromSide":"right","toNode":"d879e6d42e95cf74","toSide":"left"},
+		{"id":"aebb38a9c6372dd9","fromNode":"f005c0cf955fd0a5","fromSide":"right","toNode":"145db042148bd142","toSide":"left"},
+		{"id":"6cea24f57efe22a8","fromNode":"f005c0cf955fd0a5","fromSide":"right","toNode":"32558081f9be1b5d","toSide":"left"},
+		{"id":"8e27872850ef3f0c","fromNode":"f005c0cf955fd0a5","fromSide":"right","toNode":"20236c5c13ce2039","toSide":"left"},
+		{"id":"7d4ea03869f083ad","fromNode":"f005c0cf955fd0a5","fromSide":"right","toNode":"6938f861eb52ffc4","toSide":"left"},
+		{"id":"0f7a9b16cd13f7ca","fromNode":"f005c0cf955fd0a5","fromSide":"right","toNode":"2caa9088c19dfc34","toSide":"left"},
+		{"id":"b2e9459abbef0687","fromNode":"f005c0cf955fd0a5","fromSide":"right","toNode":"c052891f53fa25e8","toSide":"left"},
+		{"id":"86c329c22d0f8163","fromNode":"ef8b71e2ecdbed09","fromSide":"right","toNode":"11fc42d6f551c68c","toSide":"left"},
+		{"id":"687304b5835c0647","fromNode":"11fc42d6f551c68c","fromSide":"right","toNode":"329abe149ad7627c","toSide":"left"},
+		{"id":"7c957d0257dd0fd7","fromNode":"11fc42d6f551c68c","fromSide":"right","toNode":"ab7c29200be3dbb3","toSide":"left"},
+		{"id":"262c3b24513ae340","fromNode":"11fc42d6f551c68c","fromSide":"right","toNode":"bc67ea8ad329d25f","toSide":"left"},
+		{"id":"506c13c74f013383","fromNode":"11fc42d6f551c68c","fromSide":"right","toNode":"a155a9087e465805","toSide":"left"},
+		{"id":"85d91b0e3dd8f731","fromNode":"11fc42d6f551c68c","fromSide":"right","toNode":"8647a02068c76ba1","toSide":"left"},
+		{"id":"de7b9df2a4b12468","fromNode":"11fc42d6f551c68c","fromSide":"right","toNode":"b1f5bc371efb769e","toSide":"left"},
+		{"id":"14870114b9b607fb","fromNode":"11fc42d6f551c68c","fromSide":"right","toNode":"c2b8d90067a18173","toSide":"left"}
+	]
+}

@@ -1,0 +1,41 @@
+{
+	"nodes":[
+		{"id":"f63aba939cc34a45","type":"text","text":"D1. Pandas Core: Series, DataFrame","x":0,"y":-240,"width":250,"height":60,"color":"6"},
+		{"id":"388b9f78bb7cd610","type":"text","text":"D3. Merging/Joining Datasets","x":0,"y":-80,"width":250,"height":60,"color":"6"},
+		{"id":"1304775331b38fc6","type":"text","text":"D4. SQL <-> Pandas Integration","x":0,"y":-8,"width":250,"height":60,"color":"6"},
+		{"id":"ff4ea66a115ddf43","type":"text","text":"D5. DateTime Operations","x":2,"y":69,"width":250,"height":60,"color":"6"},
+		{"id":"c64d4387f04a9410","type":"text","text":"D2. Data Cleaning and Transformation","x":0,"y":-165,"width":250,"height":60,"color":"6"},
+		{"id":"935d817cb9ccf254","type":"text","text":"D6. Project: Clean Real Dataset","x":2,"y":160,"width":250,"height":60,"color":"6"},
+		{"id":"179e11720e3d21a7","type":"text","text":"D7. Review & Practice Problems","x":2,"y":240,"width":250,"height":60,"color":"6"},
+		{"id":"b85f72093c770fba","type":"text","text":"W1. Pandas Mastery + SQL Integration","x":-500,"y":2,"width":340,"height":50,"color":"3"},
+		{"id":"4970e8c54e70c249","type":"text","text":"D9. API Data Extraction","x":2,"y":437,"width":250,"height":60,"color":"6"},
+		{"id":"bdc43a14369952d6","type":"text","text":"D11. Error Handling and Logging","x":2,"y":613,"width":298,"height":60,"color":"6"},
+		{"id":"5213e789b771fe8b","type":"text","text":"D12. Performance Optimization","x":2,"y":700,"width":301,"height":60,"color":"6"},
+		{"id":"97194fa08d2d284f","type":"text","text":"D8. CSV/JSON processing","x":2,"y":360,"width":250,"height":60,"color":"6"},
+		{"id":"5a6a7afb5a88b300","type":"text","text":"D10. DB Operations","x":2,"y":527,"width":250,"height":60,"color":"6"},
+		{"id":"86d125ad670c723e","type":"text","text":"D13. Project: Build ETL Pipeline","x":-1,"y":776,"width":304,"height":60,"color":"6"},
+		{"id":"34660e497f44f0ee","type":"text","text":"D14. Code Review + Refactoring","x":1,"y":864,"width":299,"height":60,"color":"6"},
+		{"id":"83385a1e65714b1b","type":"text","text":"W2. ETL Scripting + Optimization","x":-500,"y":583,"width":311,"height":60,"color":"3"},
+		{"id":"7b088dbef2199bdb","type":"file","file":"API_data_extraction.canvas","x":500,"y":367,"width":320,"height":200},
+		{"id":"d7d03f70e9c556cb","type":"text","text":"Pandas Learning","x":-1120,"y":557,"width":280,"height":86,"color":"5"}
+	],
+	"edges":[
+		{"id":"8a179c4f4e14937b","fromNode":"d7d03f70e9c556cb","fromSide":"right","toNode":"b85f72093c770fba","toSide":"left"},
+		{"id":"dc4c2241fe0758ae","fromNode":"b85f72093c770fba","fromSide":"right","toNode":"f63aba939cc34a45","toSide":"left"},
+		{"id":"11da932a67d1cab6","fromNode":"b85f72093c770fba","fromSide":"right","toNode":"c64d4387f04a9410","toSide":"left"},
+		{"id":"286e4fe1c56747ae","fromNode":"b85f72093c770fba","fromSide":"right","toNode":"388b9f78bb7cd610","toSide":"left"},
+		{"id":"057cc267cac192d1","fromNode":"b85f72093c770fba","fromSide":"right","toNode":"1304775331b38fc6","toSide":"left"},
+		{"id":"a04efed3565807ff","fromNode":"b85f72093c770fba","fromSide":"right","toNode":"ff4ea66a115ddf43","toSide":"left"},
+		{"id":"92fb8a7118330b1d","fromNode":"b85f72093c770fba","fromSide":"right","toNode":"935d817cb9ccf254","toSide":"left"},
+		{"id":"0dfc5b44e13859c6","fromNode":"b85f72093c770fba","fromSide":"right","toNode":"179e11720e3d21a7","toSide":"left"},
+		{"id":"624aa58eaf0e2dff","fromNode":"d7d03f70e9c556cb","fromSide":"right","toNode":"83385a1e65714b1b","toSide":"left"},
+		{"id":"86faf5a8ce5d3793","fromNode":"83385a1e65714b1b","fromSide":"right","toNode":"97194fa08d2d284f","toSide":"left"},
+		{"id":"b19a5e93f53c987b","fromNode":"83385a1e65714b1b","fromSide":"right","toNode":"4970e8c54e70c249","toSide":"left"},
+		{"id":"218eec2d431f7073","fromNode":"83385a1e65714b1b","fromSide":"right","toNode":"5a6a7afb5a88b300","toSide":"left"},
+		{"id":"89d56300f230a3d1","fromNode":"83385a1e65714b1b","fromSide":"right","toNode":"bdc43a14369952d6","toSide":"left"},
+		{"id":"c7c7cc59608d5874","fromNode":"83385a1e65714b1b","fromSide":"right","toNode":"5213e789b771fe8b","toSide":"left"},
+		{"id":"61ccda86f2fe6583","fromNode":"83385a1e65714b1b","fromSide":"right","toNode":"86d125ad670c723e","toSide":"left"},
+		{"id":"9638a11d8bfc419b","fromNode":"83385a1e65714b1b","fromSide":"right","toNode":"34660e497f44f0ee","toSide":"left"},
+		{"id":"91fd716d54d425d9","fromNode":"4970e8c54e70c249","fromSide":"right","toNode":"7b088dbef2199bdb","toSide":"left"}
+	]
+}

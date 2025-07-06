@@ -1,0 +1,17 @@
+{
+	"nodes":[
+		{"id":"c560558aeead92e3","type":"text","text":"GCP Serverless","x":-114,"y":-123,"width":250,"height":60},
+		{"id":"79fa58239857df41","type":"text","text":"D1. Big Query Mastery","x":435,"y":-323,"width":250,"height":60,"color":"6"},
+		{"id":"7ae4de854e1dea2c","type":"text","text":"D2. Batch ETL with Dataflow","x":433,"y":-188,"width":250,"height":60,"color":"6"},
+		{"id":"928815fe7660d1f5","type":"text","text":"Apache Beam Word Count","x":808,"y":-262,"width":272,"height":60,"color":"6"},
+		{"id":"47d13334aa2bd380","x":808,"y":-63,"width":330,"height":67,"type":"text","text":"Apache Beam Project from CSV to BigQueery"},
+		{"id":"0a2731b6a7a54867","x":424,"y":54,"width":250,"height":60,"type":"text","text":"D3. Real-time Pipelines (Pub/Sub+Dataflow)"}
+	],
+	"edges":[
+		{"id":"6e175089b2cb2e35","fromNode":"c560558aeead92e3","fromSide":"right","toNode":"79fa58239857df41","toSide":"left"},
+		{"id":"ee2bb02d131fac86","fromNode":"c560558aeead92e3","fromSide":"right","toNode":"7ae4de854e1dea2c","toSide":"left"},
+		{"id":"5949525f16a0b191","fromNode":"7ae4de854e1dea2c","fromSide":"right","toNode":"928815fe7660d1f5","toSide":"left"},
+		{"id":"b5229ef1beefe704","fromNode":"7ae4de854e1dea2c","fromSide":"right","toNode":"47d13334aa2bd380","toSide":"left"},
+		{"id":"479b07a44a5a642d","fromNode":"c560558aeead92e3","fromSide":"right","toNode":"0a2731b6a7a54867","toSide":"left"}
+	]
+}

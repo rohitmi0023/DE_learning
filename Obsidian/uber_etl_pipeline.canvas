@@ -1,0 +1,39 @@
+{
+	"nodes":[
+		{"id":"20561c0336d79349","type":"text","text":"Pandas","x":-51,"y":330,"width":250,"height":60},
+		{"id":"8f9054f2de464007","type":"text","text":"datetime_dim","x":-388,"y":603,"width":188,"height":50},
+		{"id":"5ac20e8e43caf3b0","type":"text","text":"passenger_count_dim","x":-176,"y":603,"width":250,"height":50},
+		{"id":"3348af5a61f3e58e","type":"text","text":"rate_code_dim","x":100,"y":603,"width":240,"height":50},
+		{"id":"4173e616939652c9","type":"text","text":"pickup_location_dim","x":360,"y":598,"width":220,"height":55},
+		{"id":"3f79f152fe780541","type":"text","text":"GCP Services","x":1780,"y":328,"width":250,"height":60},
+		{"id":"2068aac576a55bed","type":"text","text":"Cloud storage","x":1280,"y":628,"width":250,"height":60},
+		{"id":"63f33a2af135b2fe","type":"text","text":"Compute engine","x":1580,"y":628,"width":250,"height":60},
+		{"id":"711abe7a6c7a01d9","type":"text","text":"BigQuery","x":1850,"y":628,"width":250,"height":60},
+		{"id":"7ea1a36c157c7854","type":"text","text":"Looker","x":2120,"y":628,"width":250,"height":60},
+		{"id":"b97007da24140c4e","x":970,"y":807,"width":250,"height":73,"type":"text","text":"ETL"},
+		{"id":"aa9988cfedd280b9","x":525,"y":1001,"width":264,"height":97,"type":"text","text":"Create Compute Instance"},
+		{"id":"d42b5d9bc558a453","x":-165,"y":912,"width":505,"height":89,"type":"text","text":"Upload CSV file to Cloud Storage and make it publicly access to download"},
+		{"id":"5e59ede864867f87","x":460,"y":1320,"width":250,"height":66,"type":"text","text":"install modules"},
+		{"id":"9e401878465065d2","x":-7,"y":1320,"width":347,"height":66,"type":"text","text":"Firewall Policy under Network Security"},
+		{"id":"d2ca951da1ecba71","x":889,"y":1025,"width":413,"height":73,"type":"text","text":"Extract- read data from cloud storage as API"},
+		{"id":"ba60aa5b124156e8","x":935,"y":1250,"width":320,"height":70,"type":"text","text":"Transform the data with pandas"},
+		{"id":"5caba3d33d20ac04","x":928,"y":1500,"width":327,"height":120,"type":"text","text":"Load the data into BigQuery by using bigquery  module, paas in crediantials to authenticate yourself"}
+	],
+	"edges":[
+		{"id":"19f5ffe395219e9d","fromNode":"3f79f152fe780541","fromSide":"bottom","toNode":"2068aac576a55bed","toSide":"top"},
+		{"id":"8917215a297b3761","fromNode":"3f79f152fe780541","fromSide":"bottom","toNode":"63f33a2af135b2fe","toSide":"top"},
+		{"id":"5f72e855636410ec","fromNode":"3f79f152fe780541","fromSide":"bottom","toNode":"711abe7a6c7a01d9","toSide":"top"},
+		{"id":"64ba011cc38adeda","fromNode":"3f79f152fe780541","fromSide":"bottom","toNode":"7ea1a36c157c7854","toSide":"top"},
+		{"id":"20d411acf0d4e1c3","fromNode":"20561c0336d79349","fromSide":"bottom","toNode":"8f9054f2de464007","toSide":"top"},
+		{"id":"97cf4c1c9b404cb9","fromNode":"20561c0336d79349","fromSide":"bottom","toNode":"5ac20e8e43caf3b0","toSide":"top"},
+		{"id":"1211a52519be0908","fromNode":"20561c0336d79349","fromSide":"bottom","toNode":"3348af5a61f3e58e","toSide":"top"},
+		{"id":"d876bef2324c3ae1","fromNode":"20561c0336d79349","fromSide":"bottom","toNode":"4173e616939652c9","toSide":"top"},
+		{"id":"0b4210c91a6da80f","fromNode":"b97007da24140c4e","fromSide":"left","toNode":"aa9988cfedd280b9","toSide":"top"},
+		{"id":"e6bd7f5d1b09b28e","fromNode":"aa9988cfedd280b9","fromSide":"bottom","toNode":"9e401878465065d2","toSide":"top"},
+		{"id":"fe1fd35f69bb7f40","fromNode":"aa9988cfedd280b9","fromSide":"bottom","toNode":"5e59ede864867f87","toSide":"top"},
+		{"id":"80d930ea48d6ba5c","fromNode":"d42b5d9bc558a453","fromSide":"right","toNode":"b97007da24140c4e","toSide":"left"},
+		{"id":"bb4afdce03131ec3","fromNode":"b97007da24140c4e","fromSide":"bottom","toNode":"d2ca951da1ecba71","toSide":"top"},
+		{"id":"74bc941b1381864a","fromNode":"d2ca951da1ecba71","fromSide":"bottom","toNode":"ba60aa5b124156e8","toSide":"top"},
+		{"id":"8e2c27a9b7a22a74","fromNode":"ba60aa5b124156e8","fromSide":"bottom","toNode":"5caba3d33d20ac04","toSide":"top"}
+	]
+}
