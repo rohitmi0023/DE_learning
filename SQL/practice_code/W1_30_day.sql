@@ -1,4 +1,4 @@
--------------------------------------------------- WEEK 1: SQL Foundations & Intermediate Concepts-----------------------------
+-------------------------------------------------- WEEK 1: SQL Foundations & Intermediate Concepts ------------------------------
 -------------------- Day 1 : Basic SQL Refresher (SELECT, WHERE, GROUP BY, JOINs) 
 -- Article- https://sqlbolt.com/
 -- Questions:
@@ -281,11 +281,148 @@ HAVING
 -- https://www.udemy.com/course/the-advanced-sql-course-2021/
 -- Questions:
 -- https://leetcode.com/problems/consecutive-numbers/
+with ct1 as (
+select
+id,
+num,
+row_number() over(partition by num order by id) as row_num,
+id - row_number() over(partition by num order by id) as diff
+from logs
+)
+select
+num as ConsecutiveNums
+from ct1
+group by diff, num
+having count(*) >=3
+;
+-- Alternative
+with ct as (
+    select
+    num
+    ,case 
+    when ((lag(num) over() = num) and (lead(num) over() = num)) then 'Ans'
+    Else 'Pass' end as columns
+    from logs
+)
+select
+distinct num ConsecutiveNums
+from ct
+where columns = 'Ans'
+;
 -- https://platform.stratascratch.com/coding/2053-monthly-retention-rate
+with ct1 as (
+select 
+distinct
+extract(month from record_date) as month,
+extract(year from record_date) as year,
+account_id,
+user_id
+from sf_events
+-- where account_id='A3'
+order by year,month
+)
+
+-- dec users
+,dec_users as (
+select 
+account_id,
+user_id
+from ct1
+where 1=1
+and month=12
+and year=2020
+)
+,dec_next_users as (
+select 
+account_id,
+user_id
+from ct1
+where 1=1
+and year >=2021
+)
+-- jan users
+, jan_users as (
+select 
+account_id,
+user_id
+from ct1
+where 1=1
+and month=01
+and year=2021
+)
+, jan_next_users as (
+select 
+account_id,
+user_id
+from ct1
+where 1=1
+and year >=2021
+and month > 01
+)
+
+, dec_r as (
+select 
+d.account_id,
+case when count(d.user_id) = 0 then 0 else round(count(distinct dn.user_id)*1.00/count(distinct d.user_id),2) end as dec_retention
+from dec_users d
+left join dec_next_users dn
+on d.account_id = dn.account_id
+and d.user_id = dn.user_id
+group by d.account_id
+)
+
+, jan_r as (
+select 
+j.account_id,
+case when count(j.user_id) = 0 then 0 else round(count(distinct jn.user_id)*1.00/count(distinct j.user_id),2) end as jan_retention
+from jan_users j 
+left join dec_users d 
+on j.account_id = d.account_id
+and j.user_id = d.user_id
+left join jan_next_users jn 
+on jn.user_id = j.user_id
+and jn.account_id = j.account_id
+group by j.account_id
+)
+
+select
+dr.account_id,
+case when dr.dec_retention = 0 then 0 else jr.jan_retention/dr.dec_retention end as retention_rate
+from dec_r dr 
+join jan_r jr 
+on dr.account_id = jr.account_id
+;
 -- https://datalemur.com/questions/yoy-growth-rate
-----
-----
------ 
+with ct1 as (
+SELECT 
+extract(year from transaction_date) as year,
+product_id,
+sum(spend) as curr_year_spend
+FROM user_transactions
+-- where product_id = '123424'
+group by product_id, year
+-- limit 5
+)
+, ct2 as (
+SELECT
+year,
+product_id,
+curr_year_spend,
+lag(curr_year_spend) over(partition by product_id order by year)
+as prev_year_spend
+from ct1 
+)
+SELECT
+year,
+product_id,
+curr_year_spend,
+prev_year_spend,
+round((curr_year_spend-prev_year_spend)/prev_year_spend*100,2) as yoy_rate
+from ct2
+order by 2,1
+;
+
+
 ----------------------------- Day 6 : Date/Time Manipulation (EXTRACT, DATE_TRUNC, DATEDIFF)
 -- Articles:
 --  https://www.sqltutorial.org/sql-date-functions/

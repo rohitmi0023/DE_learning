@@ -1,4 +1,4 @@
--- null counts
+-- null counts for each column in a table
 -- Table created-  SP_NULL_CHECKS
 use schema analytics.scd;
 create or replace procedure null_counts(TABLE_NAME varchar)

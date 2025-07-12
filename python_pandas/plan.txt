@@ -13,16 +13,3 @@ Week 1: Pandas Mastery + SQL Integration
         https://pandas.pydata.org/docs/getting_started/intro_tutorials/09_timeseries.html
         https://pandas.pydata.org/docs/reference/api/pandas.Series.resample.html#pandas.Series.resample
         https://pandas.pydata.org/docs/getting_started/intro_tutorials/06_calculate_statistics.html#min-tut-06-stats
-    Day 6: Project: Clean Real Dataset
-        https://www.kaggle.com/datasets
-
-    Day 7: Review & Practice Problems
-        https://platform.stratascratch.com/technical
-
-Week 2: ETL Scripting + Optimization
-    Day 1: CSV/JSON Processing
-        https://realpython.com/python-csv/
-
-    Day 2: API Data Extraction
-        https://realpython.com/python-requests/
-
