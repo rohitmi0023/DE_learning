@@ -3,8 +3,10 @@ import csv
 
 # how to read a csv file
 csv_file_path = 'day.csv'
-with open(csv_file_path) as my_csv:
+with open(csv_file_path, encoding='utf-8') as my_csv:
+    print(my_csv)
     csv_reader = csv.reader(my_csv, delimiter=',')
+    print(csv_reader)
     line_count = 0
     for row in csv_reader:
         if line_count == 0:
@@ -13,7 +15,7 @@ with open(csv_file_path) as my_csv:
         else:
             print('Day Number in numeric: ', row[0], ', Day Number in Numeric Suffix: ', row[2])
             line_count += 1
-    print('Rows processed: ', line_count)
+    print(f'Rows processed: {line_count}')
     
 # %%
 # Reading csv file in as a dictionary
