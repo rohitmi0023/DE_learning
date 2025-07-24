@@ -221,3 +221,124 @@ dicts['new'] = 'Universe'
 # print(dicts)
 for x, y in dicts.items():
     print(x, y)
+
+
+# %%
+
+# Apply Functions
+
+def apply_function(func, *args, **kwargs):
+    """
+    Applies a function with given positional and keyword arguments.
+    
+    Args:
+        func: The function to apply.
+        *args: Positional arguments for the function.
+        **kwargs: Keyword arguments for the function.
+    
+    Returns:
+        The result of the function call.
+    """
+    print("Applying function:", func.__name__)
+    print("Positional arguments:", args)
+    print("Keyword arguments:", kwargs)
+    return func(*args, **kwargs)
+
+
+# Example usage
+def add(a, b):
+    return a + b   
+
+result = apply_function(add, a=5, b=3)
+print(result)  # Output: 8
+
+
+# %%
+
+class CList:
+
+    @property
+    def hello(self):
+        return "Hello, World!"
+
+c = CList()
+print(c.hello)
+# %%
+# what i am doing wrong here?
+
+def logger(fun):
+    def wrapper(*args, **kwargs):
+        print(f"Calling function {fun.__name__} with arguments {args} and keyword arguments {kwargs}")
+        val =  fun(*args, **kwargs)
+        print('the result is:', val)
+        return val
+    return wrapper
+
+@logger
+def add(a, b):
+    return a + b
+
+# add(2,3)
+
+
+# print(add(2, 3))
+
+# %%
+# generate a parameterized decorator
+def parameterized_decorator(param):
+    def decorator(func):
+        print(func)
+        def wrapper(*args, **kwargs):
+            return func(*args, **kwargs)
+        return wrapper
+    return decorator
+
+@parameterized_decorator('temp')
+def multiply(a, b):
+    return a * b
+
+# print(dec)
+# implementation of  
+
+# %%
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    @property
+    def age(self):
+        return self._age
+    
+    @age.setter
+    def age(self, value):
+        if value < 0:
+            raise ValueError("Age cannot be negative")
+        self._age = value
+
+
+boy = Person('Rohit',20)
+    
+# %%
+class Vector2:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __add__(self, other):
+        print("DO IT YOURSELF")
+        # if isinstance(other, Vector2):
+        #     return Vector2(self.x + other.x, self.y + other.y)
+        # return NotImplemented
+
+    def __repr__(self):
+        return f"Vector2({self.x}, {self.y})"
+    
+
+a = Vector2(1, 2)
+b = Vector2(3, 4)
+
+c = a + b  # Using the overloaded __add__ method
+print(c)  # Output: Vector2(4, 6)
+print(type(c))  # Output: <class '__main__.Vector2'>
+

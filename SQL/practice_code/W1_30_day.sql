@@ -496,7 +496,7 @@ ct2 AS (
         date_visited - row_number() over(
             PARTITION by user_id
             ORDER BY
-                date_visited
+                da  
         ) * INTERVAL '1 DAY' AS user_group
     FROM
         ct1
