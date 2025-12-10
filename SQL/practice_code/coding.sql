@@ -42,3 +42,19 @@ left join requests r
 on s.seat_no = r.seat_no
 order by s.seat_no
 ;
+
+
+-- regexp
+-- '^U[0-9]{3}$' starts with U, followed by exactly 3 digits
+-- '[a-zA-Z0-9._%+-]+@gmail.com$' ends with gmail.com must
+-- 'ABC[0-9]+' OR 'ABC\\d+' contain ABC followed by any number
+-- '\\d{4}-\\d{2}-\\d{2}$'
+-- '[0-9A-Za-z._-+%]+@[a-zA-Z0-9.-]+\.[a-zA-Z]+' only email part from line
+-- '#[0-9]+' only hashtag and followed number from line
+
+-- '\d{12}' Showing only last 4 digits of a 16 digit card number
+
+------- domains from weird emails
+select domain
+from table
+where regexp_like(user_id, '[0-9A-Za-z]@')
