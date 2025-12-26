@@ -58,3 +58,55 @@ order by s.seat_no
 select domain
 from table
 where regexp_like(user_id, '[0-9A-Za-z]@')
+
+
+----------- PIVOTING
+select
+student
+, max(case when subject = 'Math' then grade else 0 end) as Math
+, max(case when subject = 'Science' then grade else 0 end) as Science
+, max(case when subject = 'History' then grade else 0 end) as History
+from student_grades
+group by student;
+
+Execution Step 1
+student,(CASE... Math),(CASE... Science),(CASE... History)
+John,90,0,0
+John,0,85,0
+Jane,95,0,0
+Jane,0,0,88
+
+Execution Step 2
+Group by student SQUASHES all 'John' rows into one.
+
+---------- UNPIVOTING
+-- Method #1
+select year, 'Jan', Jan_sales as sales from widetable
+union all
+select year, 'Feb', Feb_sales as sales from widetable;
+
+-- Method #2
+select t.year, x.month, x.sales
+from widetable t,
+lateral (values ('Jan', t.jan_sales), ('Feb', t.feb_sales)) as x(month, sales);
+
+---------- GROUPING SETS
+-- Method #1
+-- Query 1: Granular Data
+SELECT Region, Product, SUM(Amount) FROM Sales GROUP BY Region, Product
+UNION ALL
+-- Query 2: Subtotals by Region (Product becomes NULL here)
+SELECT Region, NULL, SUM(Amount) FROM Sales GROUP BY Region
+UNION ALL
+-- Query 3: Grand Total (Region and Product become NULL)
+SELECT NULL, NULL, SUM(Amount) FROM Sales;
+
+-- Method #2
+select region, product, sum(amount)
+from sales group by grouping sets(
+    (region, product),
+    (region),
+    ()
+);
+
+
