@@ -1,5 +1,5 @@
 #  Calculator project
-# 
+# Learning - Function with return feature
 def input1():
     num1 = float(input('What\'s the first number?: '))
     return num1
