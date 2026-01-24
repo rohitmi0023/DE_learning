@@ -13,6 +13,19 @@ with open(file='./Input/Names/invited_names.txt', mode='r') as f:
         # name = name.replace('\n', '')
         invited_names.append(name.strip())    
 
+
+
+with open(file='./Input/Letters/starting_letter.txt', mode='r') as f:
+    letter = f.read()
+    for name in invited_names:
+        new_letter = letter.replace(PLACEHOLDER,name)        
+        
+        file_name = f'letter_for_{name}.txt'    
+        with open(file = f'./Output/ReadyToSend/{file_name}', mode='w') as f2:
+            f2.writelines(new_letter)
+
+
+# 1st thinking of line 18-25
 # with open(file='./Input/Letters/starting_letter.txt', mode='r') as f:
 #     letter = f.readlines()
 #     for name in invited_names:
@@ -24,12 +37,3 @@ with open(file='./Input/Names/invited_names.txt', mode='r') as f:
 #         file_name = f'letter_for_{name}.txt'    
 #         with open(file = f'./Output/ReadyToSend/{file_name}', mode='w') as f2:
 #             f2.writelines(new_letter)
-
-with open(file='./Input/Letters/starting_letter.txt', mode='r') as f:
-    letter = f.read()
-    for name in invited_names:
-        new_letter = letter.replace(PLACEHOLDER,name)        
-        
-        file_name = f'letter_for_{name}.txt'    
-        with open(file = f'./Output/ReadyToSend/{file_name}', mode='w') as f2:
-            f2.writelines(new_letter)
