@@ -56,12 +56,8 @@ while game_is_on:
         if len(correct_guesses) == 50:
             game_is_on = False
 
-missed_states = []
+missed_states = [state for state in states_list if state not in correct_guesses]
 
-for state in states_list:
-    if state not in correct_guesses:
-        missed_states.append(state)
-   
 dict = {
     'state': missed_states
 }
