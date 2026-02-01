@@ -69,9 +69,10 @@ window.configure(padx=100, pady=50)  # add padding around the window
 canvas = Canvas(width=200, height = 224, bg=YELLOW, highlightthickness=0)
 tomato_img = PhotoImage(file=image_path)
 canvas.create_image(100, 112, image=tomato_img)
+canvas.grid(column=1, row=1)
+
 
 timer_text = canvas.create_text(100,130, text="00:00", fill="white", font=(FONT_NAME, 35, "bold"))
-canvas.grid(column=1, row=1)
 
 
 timer_label = Label(text='Timer', fg=GREEN, bg=YELLOW, font=(FONT_NAME, 50))
