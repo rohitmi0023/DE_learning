@@ -1,9 +1,15 @@
 from tkinter import *
 from tkinter import messagebox
 import pyperclip
+import json
 
 image_path = '100daysofcodePython/d16-d30/d29/logo.png'
 file_path = '100daysofcodePython/d16-d30/d29/file.txt'
+json_file_path = '100daysofcodePython/d16-d30/d29/json_file.json'
+
+class TextNotFoundError(Exception):
+    """Raised when a searched website is not found in the password file."""
+    pass
 
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
@@ -34,7 +40,12 @@ def save_pwd():
     website_detail = website_entry.get()
     email_detail = email_entry.get()
     password_detail = password_entry.get()
-    
+    new_data = {
+        website_detail: {
+            'email': email_detail,
+            'password': password_detail
+        }
+    }
     if len(website_detail)==0 or len(password_detail)==0:
         messagebox.showinfo(title='Info', message='Please don\'t leave any fields empty!!')
         
@@ -42,11 +53,41 @@ def save_pwd():
         is_ok = messagebox.askokcancel(title=website_detail, message=f'Details: \nEmail:{email_detail} \nPassword: {password_detail}')
 
         if is_ok:
-            with open(file=file_path, mode='a') as f:
-                text = f'{website_detail} | {email_detail} | {password_detail} \n'
-                f.write(text)
+            try:
+                with open(file=json_file_path, mode='r') as f:
+                    # loading existing data into dict
+                    data = json.load(f)
+            except FileNotFoundError:
+                with open(file=json_file_path, mode='w') as f:
+                    # writing new dictionary data to json file
+                    json.dump(obj=new_data, fp=f, indent=4)
+            else:
+                with open(file=json_file_path, mode='w') as f:
+                    # updating existing dictionary data with new data
+                    data.update(new_data)
+                    # writing new dictionary data to json file
+                    json.dump(obj=data, fp=f, indent=4)
+            finally:
                 website_entry.delete(0, END)
                 password_entry.delete(0, END)
+
+
+# ---------------------------- LOOKUP WEBSITES ------------------------------- #    
+def find_website():
+    text = website_entry.get()
+    try:
+        with open(file=json_file_path, mode='r') as f:
+            data = json.load(fp=f)
+    except FileNotFoundError:
+        messagebox.showinfo(title='Info', message=f'No Data File Found')
+    else:
+        if text in data: # searches for text in data keys
+            email = data[text]['email']
+            pwd = data[text]['password']
+            messagebox.showinfo(title=text, message=f'Email: {email}\n Password: {pwd}')
+        else:
+            messagebox.showinfo(title='Info', message=f'No details for "{text}" exist')
+        
 
 # ---------------------------- UI SETUP ------------------------------- #
 
@@ -65,10 +106,12 @@ canvas.grid(column=1, row=0)
 website_label = Label(text='Website: ')
 website_label.grid(row=1, column=0)
 
-website_entry = Entry(width=35)
-website_entry.grid(row=1,column=1, columnspan=2)
+website_entry = Entry(width=20)
+website_entry.grid(row=1,column=1)
 website_entry.focus()
 
+website_search_button = Button(text='Search', width=12, command=find_website)
+website_search_button.grid(row=1, column=2)
 
 email_label = Label(text='Email/Username: ')
 email_label.grid(row=2, column=0)
