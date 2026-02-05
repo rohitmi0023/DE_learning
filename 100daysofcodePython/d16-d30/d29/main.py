@@ -7,11 +7,6 @@ image_path = '100daysofcodePython/d16-d30/d29/logo.png'
 file_path = '100daysofcodePython/d16-d30/d29/file.txt'
 json_file_path = '100daysofcodePython/d16-d30/d29/json_file.json'
 
-class TextNotFoundError(Exception):
-    """Raised when a searched website is not found in the password file."""
-    pass
-
-
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 import random
 
