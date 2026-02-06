@@ -112,7 +112,7 @@ email_label = Label(text='Email/Username: ')
 email_label.grid(row=2, column=0)
 
 email_entry = Entry(width=35)
-email_entry.insert(0, 'rohitracer0023@gmail.com')
+email_entry.insert(0, 'abc@gmail.com')
 email_entry.grid(row=2,column=1, columnspan=2)
 
 
