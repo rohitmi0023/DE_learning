@@ -15,7 +15,7 @@ import smtplib
 
 birthday_file_path = '100daysofcodePython/d31-d45/d32/birthdays.csv'
 my_email = 'abc@gmail.com'
-password = 'dllkdadsagenccxn'
+password = 'pwd123'
 to_email = ''
 
 today = dt.datetime.now()

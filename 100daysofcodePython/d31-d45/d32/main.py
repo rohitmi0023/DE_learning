@@ -4,7 +4,7 @@ import random
 
 quotes_path = '100daysofcodePython/d31-d45/d32/quotes.txt'
 my_email = 'abc@gmail.com'
-password = 'dllkdadsagenccxn'
+password = 'pwd123'
 
 """return n number of quotes. Returns list."""
 def get_quotes(n):
