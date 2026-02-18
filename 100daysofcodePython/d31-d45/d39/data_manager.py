@@ -12,34 +12,15 @@ class DataManager:
         self._user = os.getenv('SHEETY_USERNAME')
         self._password = os.getenv('SHEETY_PASSWORD')
         self._authorization = HTTPBasicAuth(self._user, self._password)
-        self.cities = []
-        self.sheety_url = os.getenv('SHEETY_URL_ENDPOINT')
-        self.sheety_data = [
-            {'city': 'Paris', 'iataCode': '', 'lowestPrice': 54, 'id': 2
-            },
-            {'city': 'Frankfurt', 'iataCode': '', 'lowestPrice': 42, 'id': 3
-            },
-            {'city': 'Tokyo', 'iataCode': '', 'lowestPrice': 485, 'id': 4
-            },
-            {'city': 'Hong Kong', 'iataCode': '', 'lowestPrice': 551, 'id': 5
-            },
-            {'city': 'Istanbul', 'iataCode': '', 'lowestPrice': 95, 'id': 6
-            },
-            {'city': 'Kuala Lumpur', 'iataCode': '', 'lowestPrice': 414, 'id': 7
-            },
-            {'city': 'New York', 'iataCode': '', 'lowestPrice': 240, 'id': 8
-            },
-            {'city': 'San Francisco', 'iataCode': '', 'lowestPrice': 260, 'id': 9
-            },
-            {'city': 'Dublin', 'iataCode': '', 'lowestPrice': 378, 'id': 10
-            }
-        ]
+        self.sheety_price_url = os.getenv('SHEETY_PRICE_URL_ENDPOINT')
+        self.sheety_users_url = os.getenv('SHEETY_USERS_URL_ENDPOINT')
+        self.sheety_data = []
+        self.emails = []
         
     def get_destination_data(self):
-        res = requests.get(url=self.sheety_url, auth=self._authorization)
+        res = requests.get(url=self.sheety_price_url, auth=self._authorization)
         data = res.json()
-        pprint(self.sheety_data)
-        self.sheety_data = data['prices']
+        self.sheety_data:list = data['prices']
         return self.sheety_data
     
     def update_destination_codes(self):
@@ -49,8 +30,12 @@ class DataManager:
                     'iataCode': city['iataCode']
                 }
             }
-            res = requests.put(url=f'{self.sheety_url}/{city['id']}', json=new_data, auth=self._authorization)
-            pprint(res.json())
+            res = requests.put(url=f'{self.sheety_price_url}/{city['id']}', json=new_data, auth=self._authorization)
     
-
-
+    def get_customer_emails(self):
+        res = requests.get(url=self.sheety_users_url, auth=self._authorization)
+        data = res.json()
+        data = data['users']
+        self.emails = [item['whatIsYourEmail?'] for item in data]
+        return self.emails
+        

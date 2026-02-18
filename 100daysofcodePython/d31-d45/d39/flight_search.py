@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 import os
 from requests.auth import HTTPBasicAuth
 from pprint import pprint
+from datetime import datetime, timedelta
 
 load_dotenv('100daysofcodePython/d31-d45/d39/keys.env')
 
@@ -17,7 +18,6 @@ class FlightSearch:
         self._api_key = os.getenv('AMADEUS_API_KEY')
         self._api_secret = os.getenv('AMADEUS_API_SECRET')
         self._token = self._get_new_token()
-        # self._authorization = HTTPBasicAuth(username=self._u)
     
     def _get_new_token(self):
         header = {
@@ -43,7 +43,6 @@ class FlightSearch:
             'include': 'AIRPORTS'
         }
         res = requests.get(url=city_search_endpoint, params=params, headers=header)
-        pprint(res.json())
         try:
             data:list = res.json()['data']
             code = data[0]['iataCode']
@@ -55,7 +54,7 @@ class FlightSearch:
             print(f'IndexError: {error} for city: {city.capitalize()}')
         return code
 
-    def check_flights(self, origin_city_code, destination_city_code, from_time, to_time):
+    def check_flights(self, origin_city_code, destination_city_code, from_time, to_time, is_direct=True):
         headers = {"Authorization": f"Bearer {self._token}"}
         query = {
             "originLocationCode": origin_city_code,
@@ -63,7 +62,7 @@ class FlightSearch:
             "departureDate": from_time.strftime("%Y-%m-%d"),
             "returnDate": to_time.strftime("%Y-%m-%d"),
             "adults": 1,
-            "nonStop": "true",
+            "nonStop": str(is_direct).lower(),
             "currencyCode": "GBP",
             "max": "10",
         }
@@ -84,8 +83,3 @@ class FlightSearch:
             return None
 
         return response.json()
-    
-
-
-
-
