@@ -1,3 +1,3 @@
-price = '1,100'
-price = price.replace(',', '')
-print(price)
+from datetime import datetime
+
+print(datetime.now().weekday())
